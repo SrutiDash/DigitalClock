@@ -1,0 +1,118 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+    position: relative;
+    padding: 20px 50px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Transparent effect */
+    backdrop-filter: blur(10px); /* Glass effect */
+    box-shadow: 0 0 20px rgba(253, 254, 255, 0.5); /* Neon glow */
+    border: 2px solid rgba(3, 150, 255, 0.7);
+    animation: glow 2s infinite alternate ease-in-out;
+}
+
+/* Clock styling */
+#clock {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Outer glowing border animation */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px rgba(39, 157, 241, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 30px rgba(0, 150, 255, 0.8);
+    }
+}
+
+.container::before{
+    content: '';
+    width: 80px;
+    height: 80px;
+    background: #13c0c99f;
+    opacity: 50px;
+    border-radius: 5px;
+    position: absolute;
+    left: -40px;
+    top: -40px;
+    z-index: -1;
+}
+
+.container .first-box {
+    width: 70px;
+    height: 70px;
+    background: #13c0c99f;
+    border-radius: 5px;
+    position: absolute;
+    left: -50px;
+    top: -50px;
+    z-index: -1;
+}
+
+.container::after{
+    content: '';
+    width: 80px;
+    height: 80px;
+    background: #13c0c99f;
+    opacity: 50px;
+    border-radius: 5px;
+    position: absolute;
+    left: 300px;
+    bottom: -43px;
+    z-index: -1;
+}
+
+.container .second-box {
+    width: 70px;
+    height: 70px;
+    background: #13c0c99f;
+    border-radius: 5px;
+    position: absolute;
+    left: 320px;
+    top: 80px;
+    z-index: -1;
+}
+
+.box{
+    position: relative;
+    padding: 20px 30px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1); /* Transparent effect */
+    backdrop-filter: blur(10px); /* Glass effect */
+    box-shadow: 0 0 20px rgba(41, 213, 239, 0.5); /* Neon glow */
+    border: 2px solid rgba(10, 49, 76, 0.877);
+    /* animation: glow 2s infinite alternate ease-in-out; */
+}
+
+@keyframes glitch {
+    0% { text-shadow: 2px 2px 5px rgba(0, 255, 255, 0.8); }
+    50% { text-shadow: -2px -2px 5px rgba(255, 0, 255, 0.8); }
+    100% { text-shadow: 2px 2px 5px rgba(0, 255, 255, 0.8); }
+}
+
+#clock {
+    animation: glitch 1s infinite;
+}
+
+@keyframes bgGradient {
+    0% { background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); }
+    50% { background: linear-gradient(135deg, #0f3460, #1a1a2e, #16213e); }
+    100% { background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); }
+}
+
+body {
+    animation: bgGradient 10s infinite alternate ease-in-out;
+}
+
+
